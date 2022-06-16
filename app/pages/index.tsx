@@ -34,7 +34,7 @@ const UserInfo = () => {
     )
   } else {
     return (
-      <>
+      <div className="buttons">
         <Link href={Routes.SignupPage()}>
           <a className="button small">
             <strong>Sign Up</strong>
@@ -45,19 +45,68 @@ const UserInfo = () => {
             <strong>Login</strong>
           </a>
         </Link>
-      </>
+      </div>
     )
   }
 }
 
 const Home: BlitzPage = () => {
   return (
-    <div>
+    <div className="container">
       <h1>Hello, world!</h1>
 
       <Suspense fallback="Loading...">
         <UserInfo />
       </Suspense>
+
+      <style jsx global>{`
+        .container {
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .buttons {
+          display: grid;
+          grid-auto-flow: column;
+          grid-gap: 0.5rem;
+        }
+        .button {
+          font-size: 1rem;
+          background-color: #6700eb;
+          padding: 1rem 2rem;
+          color: #f4f4f4;
+          text-align: center;
+          text-decoration: none;
+        }
+
+        .button.small {
+          padding: 0.5rem 1rem;
+        }
+
+        .button:hover {
+          background-color: #45009d;
+        }
+
+        .button-outline {
+          border: 2px solid #6700eb;
+          padding: 1rem 2rem;
+          color: #6700eb;
+          text-align: center;
+        }
+
+        .button-outline:hover {
+          border-color: #45009d;
+          color: #45009d;
+        }
+        code {
+          font-size: 0.9rem;
+          font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+            Bitstream Vera Sans Mono, Courier New, monospace;
+        }
+      `}</style>
     </div>
   )
 }

@@ -19,9 +19,7 @@
     "printWidth": 100
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": [
-      "eslint --fix"
-    ]
+    "*.{js,ts,tsx}": []
   },
   "dependencies": {
     "@prisma/client": "3.15.2",
